@@ -3,7 +3,7 @@
 #Last rev: 20210907
 #Purpose:   Print (name, Age, has_W2)
 
-#!/bin/bash
+
 
 #Variables
 name = "bob"
