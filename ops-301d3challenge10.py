@@ -23,12 +23,3 @@
 
 
 
-
-print('(first suite)')
-...     print('x is small')
-... else:
-...     print('(second suite)')
-...     print('x is large')
-...
-(first suite)
-x is small
