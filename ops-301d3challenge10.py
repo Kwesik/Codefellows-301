@@ -1,18 +1,34 @@
-#!/usr/bin/python
+#  Declaration 
+>>> a = 20
+>>> b = 30
 
-var = 100
-if var == 200:
-   print "1 - Got a true expression value"
-   print var
-elif var == 150:
-   print "2 - Got a true expression value"
-   print var
-elif var == 100:
-   print "3 - Got a true expression value"
-   print var
-else:
-   print "4 - Got a false expression value"
-   print var
+# Main
+>>> if a == b:
+   print ("a and b are equal!")
+   Messagebox = (None, 'a and be are equal!, 'Window title', o)
+>>> elif a != b:
+   print ("a and b are NOT equal")
+   Messagebox = (None, 'a and be are equal!, 'Window title', o)
+>>> if a < b:
+   print ("a is less then b")
+   MessageBox (None, 'a is less than b'), Window title', 0)
+>>> else Print ("b is greater than a")
+   MessageBox (None, ' is greater than a', 'Window title'0)
 
-print "Good bye!"
 #End
+
+
+
+
+
+
+
+
+print('(first suite)')
+...     print('x is small')
+... else:
+...     print('(second suite)')
+...     print('x is large')
+...
+(first suite)
+x is small
