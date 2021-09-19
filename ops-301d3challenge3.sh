@@ -1,19 +1,25 @@
 #!/bin/bash
-Script Name:        File Permissions
-Autor:              KwesiK
-Date:               20210901
 
-#Variables
+# FILES OLDER THAN THIS NUMBER OF DAYS WILL BE REMOVED 
+DELAY=14
 
-#Functions
-    cd $path
-    chom -r $per $path
-    ls -l
+if [ "$(id -u)" == "0" ]; then
+	cd /var/log 
 
-#Main
-echo "enter directory path"
-read path
-echo "enter desired permissions (e.g 777):.."
-read per
+	# display the disk usage before cleanup
+	# /bin/df -h .
+	/usr/bin/du -sh /var/log
 
+	# list all the files before removing
+	/usr/bin/find /var/log/* -type f -mtime +${DELAY} -exec ls -la {} \;
+
+	# remove the files
+	/usr/bin/find /var/log/* -type f -mtime +${DELAY} -exec rm {} \;
+
+	# display the disk usage after cleanup
+	# /bin/df -h .
+	/usr/bin/du -sh /var/log
+else
+	echo "ERROR: Must be root to run script."
+fi
 #End
