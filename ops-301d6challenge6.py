@@ -3,7 +3,6 @@
 #Last rev: 20210919
 #Purpose:   Bash in python
 
-#Python3 Script
 
 #Use Python3 to run this script
 #This script runs bash commands inside python
