@@ -1,19 +1,31 @@
 # Script:   PythonHw
 #Author:    Kwesik
-#Last rev: 20210907
-#Purpose:   Print (name, Age, has_W2)
+#Last rev: 20210919
+#Purpose:   Bash in python
 
-#Run in sudo bash
+#Python3 Script
 
-echo  BEFORE CONTENTS 
-cat /var/log/syslog
-cat /var/log/wtmp
+#Use Python3 to run this script
+#This script runs bash commands inside python
 
-echo -n "" > /var/log/syslog
-echo -n "" > /var/log/wtmp
+print ("Welcome to my script")
 
-echo  AFTER CONTENTS 
-cat /var/log/syslog
-cat /var/log/wtmp
+# Importing the OS
+import os
+
+# Getting user ID
+print ("%%%% WHO AM I? %%%%")
+euid = os.geteuid()
+print("User ID is:", euid)
+
+# Getting Hardware Information
+print ("%%%% FETCH HARDWARE INFO %%%%")
+hardware = os.uname()
+print("Hardware:", hardware)
+
+# Getting Username
+print ("%%%%%% WHOAMI %%%%%%")
+import getpass
+print(getpass.getuser())
 
 #End
