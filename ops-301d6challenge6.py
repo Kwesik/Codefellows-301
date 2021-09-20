@@ -3,15 +3,17 @@
 #Last rev: 20210907
 #Purpose:   Print (name, Age, has_W2)
 
+#Run in sudo bash
 
+echo  BEFORE CONTENTS 
+cat /var/log/syslog
+cat /var/log/wtmp
 
-#Variables
-name = "bob"
-Age = 54
-has_W2 = True
+echo -n "" > /var/log/syslog
+echo -n "" > /var/log/wtmp
 
-#Main
-print (name, Age, has_W2)
-
+echo  AFTER CONTENTS 
+cat /var/log/syslog
+cat /var/log/wtmp
 
 #End
