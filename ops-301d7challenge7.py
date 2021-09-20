@@ -1,8 +1,8 @@
 #!/bin/bash/python3
 #Script:     os.walk
 #Author:     Kwesik
-#Last rev:   20210908
-#Purpose:    
+#Last rev:   20210919
+ 
 
 
 import os
