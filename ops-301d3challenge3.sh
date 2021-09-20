@@ -1,25 +1,20 @@
-#!/bin/bash
+#Script:        Clear Log
+#Author:         Kwesik
+#Date:           9/19/2021
+#Purpose:       Clear syslog
 
-# FILES OLDER THAN THIS NUMBER OF DAYS WILL BE REMOVED 
-DELAY=14
+# Clear syslog and wtmp files with a script.
+#SYS variable defines the path for syslog, for the sake of ease. WTMP variable defines the path for wtmp, for the sake of ease.
+#Main
 
-if [ "$(id -u)" == "0" ]; then
-	cd /var/log 
+SYS=/var/log/syslog
+WTMP=/var/log/wtmp
 
-	# display the disk usage before cleanup
-	# /bin/df -h .
-	/usr/bin/du -sh /var/log
+cat $SYS
+cat $WTMP
+truncate -s 0 $SYS
+truncate -s 0 $WTMP
+cat $SYS
+cat $WTMP
 
-	# list all the files before removing
-	/usr/bin/find /var/log/* -type f -mtime +${DELAY} -exec ls -la {} \;
-
-	# remove the files
-	/usr/bin/find /var/log/* -type f -mtime +${DELAY} -exec rm {} \;
-
-	# display the disk usage after cleanup
-	# /bin/df -h .
-	/usr/bin/du -sh /var/log
-else
-	echo "ERROR: Must be root to run script."
-fi
 #End
